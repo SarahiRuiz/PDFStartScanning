@@ -27,7 +27,10 @@ namespace SeleniumCsharp
             string genderRadioButton = "//div[@id='genterWrapper']//input[@value='?']";
             IWebElement genderRadioButtonDynamic = CreateDynamicElement(genderRadioButton, "Other");
             genderRadioButtonDynamic.Click();
-            new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='radioNTP' and @name='timeSyncType'][starts-with(@ng-click, 'oSettingTimeInfo')]"))).click();
+            //new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='radioNTP' and @name='timeSyncType'][starts-with(@ng-click, 'oSettingTimeInfo')]"))).click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            bool test = wait.Until(Timeout => driver.FindElement(By.Id("submit")).Displayed);
+           
             Thread.Sleep(5000);
             //https://stackoverflow.com/questions/71183346/how-to-click-on-a-radio-button-using-selenium
         }
