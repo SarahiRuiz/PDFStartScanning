@@ -11,27 +11,31 @@ namespace SeleniumCsharp
 {
     public class Tests : SetUp
     {
+
         
 
         [Test]
         public void FillForm()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             driver.Navigate().GoToUrl("https://demoqa.com/automation-practice-form");
             Thread.Sleep(5000);
-            IWebElement firstNameInput = driver.FindElement(By.Id("firstName"));
-            IWebElement lastNameInput = driver.FindElement(By.Id("lastName"));            
-            IWebElement emailInput = driver.FindElement(By.Id("userEmail"));                                   
-            EnterTextAndValidate(firstNameInput, "Billy");
-            EnterTextAndValidate(lastNameInput, "Lasti");
-            EnterTextAndValidate(emailInput, "test@test.com");
+                    IWebElement firstNameInput = driver.FindElement(By.Id("firstName"));
+        IWebElement lastNameInput = driver.FindElement(By.Id("lastName"));
+        IWebElement emailInput = driver.FindElement(By.Id("userEmail"));
+            bool testInput = TextInput(wait, firstNameInput, "Billy");
+            //EnterTextAndValidate(firstNameInput, "Billy");
+            //EnterTextAndValidate(lastNameInput, "Lasti");
+            //EnterTextAndValidate(emailInput, "test@test.com");
             string genderRadioButton = "//div[@id='genterWrapper']//input[@value='?']";
             IWebElement genderRadioButtonDynamic = CreateDynamicElement(genderRadioButton, "Other");
             genderRadioButtonDynamic.Click();
-            //new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='radioNTP' and @name='timeSyncType'][starts-with(@ng-click, 'oSettingTimeInfo')]"))).click();
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+           
+            
             bool test = wait.Until(Timeout => driver.FindElement(By.Id("submit")).Displayed);
            
             Thread.Sleep(5000);
+            //new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='radioNTP' and @name='timeSyncType'][starts-with(@ng-click, 'oSettingTimeInfo')]"))).click();
             //https://stackoverflow.com/questions/71183346/how-to-click-on-a-radio-button-using-selenium
             //https://www.selenium.dev/documentation/webdriver/waits/
         }
@@ -57,7 +61,23 @@ namespace SeleniumCsharp
             return driver.FindElement(By.XPath(dynamicElement));
         }
 
+        public bool TextInput(IWebElement element, String value, int timeOut = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
+            return wait.Until(d => {
+                element.SendKeys(value);
+                return true;
+            });  
+        }
 
+        public bool ClickOn(IWebElement element, int timeOut = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
+            return wait.Until(d => {
+                element.Click();
+                return true;
+            });
+        }
 
 
         public void PDFtest()
