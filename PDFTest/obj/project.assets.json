@@ -516,7 +516,7 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/114.0.5735.9000": {
+      "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -1951,22 +1951,26 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/114.0.5735.9000": {
-      "sha512": "BgBGrbMiyhq+wZjWfKE0t5A+TVlY5kbUj8BcxPSMjuGOW2CinaMNZq567ZjxDNDvnqJBKmx2mPa5Hkjolt28Lg==",
+    "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {
+      "sha512": "P+oMf57Rbt2mKr3k2OFijtg+Vm3xHYe147LWQLqB0aumjKuWxoZVZw1+K7rr9KqdGe646kvIVjtQH0+eheCawA==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/114.0.5735.9000",
+      "path": "selenium.webdriver.chromedriver/118.0.5993.7000",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "build/DefinePropertiesChromeDriver.targets",
         "build/Selenium.WebDriver.ChromeDriver.targets",
+        "driver/linux64/LICENSE.chromedriver",
         "driver/linux64/chromedriver",
+        "driver/mac64/LICENSE.chromedriver",
         "driver/mac64/chromedriver",
+        "driver/mac64arm/LICENSE.chromedriver",
         "driver/mac64arm/chromedriver",
+        "driver/win32/LICENSE.chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.114.0.5735.9000.nupkg.sha512",
+        "selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -2486,7 +2490,7 @@
       "NUnit3TestAdapter >= 4.5.0",
       "Selenium.Support >= 4.11.0",
       "Selenium.WebDriver >= 4.11.0",
-      "Selenium.WebDriver.ChromeDriver >= 114.0.5735.9000",
+      "Selenium.WebDriver.ChromeDriver >= 118.0.5993.7000",
       "Tesseract >= 5.2.0",
       "Tesseract.Helper >= 1.2.0",
       "coverlet.collector >= 3.1.2"
@@ -2562,7 +2566,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[114.0.5735.9000, )"
+            "version": "[118.0.5993.7000, )"
           },
           "Tesseract": {
             "target": "Package",
@@ -2593,7 +2597,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
