@@ -33,6 +33,7 @@ namespace SeleniumCsharp
            
             Thread.Sleep(5000);
             //https://stackoverflow.com/questions/71183346/how-to-click-on-a-radio-button-using-selenium
+            //https://www.selenium.dev/documentation/webdriver/waits/
         }
 
         public void EnterTextAndValidate(IWebElement element, string value)
