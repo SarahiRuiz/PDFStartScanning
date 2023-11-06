@@ -18,7 +18,7 @@ namespace PDFTesT.PageObject
             return wait.Until(d => WaitElementEnter(wait, element, value));
         }
 
-        public bool WaitElementEnter(WebDriverWait wait, IWebElement element, string Value)
+        private bool WaitElementEnter(WebDriverWait wait, IWebElement element, string Value)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace PDFTesT.PageObject
             return wait.Until(d => WaitElementClicked(wait, element));
         }
 
-        public bool WaitElementClicked(WebDriverWait wait, IWebElement element)
+        private bool WaitElementClicked(WebDriverWait wait, IWebElement element)
         {
             try
             {
