@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace PDFTest.SetUp
+namespace PDFTest.drivers
 {
     public class SetUp
     {
