@@ -15,6 +15,7 @@ namespace PDFTest.PageObject
             IWebElement firstNameInput = driver.FindElement(By.Id("firstName"));
             IWebElement lastNameInput = driver.FindElement(By.Id("lastName"));
             IWebElement emailInput = driver.FindElement(By.Id("userEmail"));
+            IWebElement movilNumberInput = driver.FindElement(By.Id("userNumber"));
             string genderRadioButtonDynamic = "//div[@id='genterWrapper']//input[@value='?']";
 
             bool enterFirstNameInput = globalMethods.EnterText(firstNameInput, formData.FirstName);
@@ -23,15 +24,18 @@ namespace PDFTest.PageObject
             Assert.IsTrue(enterLastNameInput, $"Validate if lastname {formData.LastName} was entered.");
             bool enterEmailInput = globalMethods.EnterText(emailInput, formData.Email);
             Assert.IsTrue(enterEmailInput, $"Validate if email {formData.Email} was entered.");
-            IWebElement genderRadioButton = globalMethods.CreateDynamicElement(genderRadioButtonDynamic, "Other");
-            bool clickGenderRadioButton = globalMethods.ClickOn(genderRadioButton);
-            Assert.IsTrue(clickGenderRadioButton, $"Validate if Gender Radio Button was clicked.");
+            bool enterMovilNumberInput = globalMethods.EnterText(movilNumberInput, formData.MovilNumber);
+            Assert.IsTrue(enterMovilNumberInput, $"Validate if Movil Number {formData.MovilNumber} was entered.");
+            //IWebElement genderRadioButton = globalMethods.CreateDynamicElement(genderRadioButtonDynamic, "Other");
+            //bool clickGenderRadioButton = globalMethods.ClickOn(genderRadioButton);
+            //Assert.IsTrue(clickGenderRadioButton, $"Validate if Gender Radio Button was clicked.");
+
         }
         public void GoToFormPage()
         {
-            driver.Navigate().GoToUrl("https://demoqa.com/automation-practice-form");
-            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl("https://demoqa.com/automation-practice-form");            
             Thread.Sleep(5000);
+            driver.Manage().Window.Maximize();
         }
     }
 }
