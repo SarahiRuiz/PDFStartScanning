@@ -8,5 +8,6 @@ namespace PDFTest.Models
         public String LastName { get; set; }
         public String Email { get; set; }
         public String MovilNumber { get; set; }
+        public String Year { get; set; }
     }
 }

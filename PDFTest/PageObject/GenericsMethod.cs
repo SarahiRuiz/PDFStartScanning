@@ -100,5 +100,28 @@ namespace PDFTesT.PageObject
                 return false;
             }
         }
+        public bool SelectFromDropDown(IWebElement element, int timeOut = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
+            return wait.Until(d => WaitElementSelectDropDown(wait, element));
+        }
+
+        private bool WaitElementSelectDropDown(WebDriverWait wait, IWebElement element)
+        {
+            try
+            {
+                return wait.Until(d =>
+                {                                                                                                                                              
+                    ((IJavaScriptExecutor)driver)
+                    .ExecuteScript("arguments[0].scrollIntoView(true);", element);
+                    ClickOn(element);
+                    return true;
+                });
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

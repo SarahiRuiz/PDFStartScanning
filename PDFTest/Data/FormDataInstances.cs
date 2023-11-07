@@ -10,6 +10,7 @@ namespace PDFTest.Data
             LastName = "Lasti",
             Email = "test@test.com",
             MovilNumber = "5567052300",
+            Year = "2000",
         };
     }
 }
